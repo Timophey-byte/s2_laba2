@@ -105,15 +105,7 @@ using namespace std;
 
 	void note::setNewPhone()
 	{
-		string str = "11";
-		while (str.length() < 3)
-		{	
-			cout << "phone: " << endl;
-			cin >> str;
-			if (str.length() < 3)
-				cout << "phone number cannot be shorter than 3 symbols" << endl;
-		}
-		setPhone(str);
+		cin >> (*this);
 	}
 
 	void note::setNewDay()
@@ -189,6 +181,31 @@ using namespace std;
 		}
 
 	}
+
+	std::ostream& operator<<(std::ostream& out, note& ptr)
+	{
+		out << "name: " << ptr.getName() << endl;
+		out << "surname: " << ptr.getSurname() << endl;
+		out << "phone number: " << ptr.getPhone() << endl;
+		out << "birth date: " << ptr.getDay() << "/" << ptr.getMonth() << "/" << ptr.getYear() << endl;
+		return out << endl;
+	}
+
+	std::istream& operator>>(std::istream& in, note& ptr)
+	{
+		string str = "11";
+		while (str.length() < 3)
+		{
+			cout << "phone: " << endl;
+			in >> str;
+			if (str.length() < 3)
+				cout << "phone number cannot be shorter than 3 symbols" << endl;
+		}
+
+		ptr.setPhone(str);
+		return in;
+	}
+
 
 
 	void note::print()

@@ -63,6 +63,7 @@ public:
 	void editMenu();
 
 	void print();
-	// str.substr(0, n)
+	friend std::ostream& operator<<(std::ostream& out, note& ptr);
+	friend std::istream& operator>>(std::istream& in, note& time);
 
 };
