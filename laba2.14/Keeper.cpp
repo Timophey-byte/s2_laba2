@@ -2,7 +2,6 @@
 #include "my.h"
 
 #include "keeper.h"
-
 #include "stdio.h"
 #include "note.h"
 #include "string.h"
@@ -89,7 +88,7 @@ int Keeper::delit() {
 		return 0;
 	}
 
-	while (n < 1 || n >= size)
+	while (n < 0 || n >= size)
 	{
 		printf("enter id of element or -1 to exit or %d to see all\n", size);
 		scan("%d", &n);
@@ -133,7 +132,6 @@ void Keeper::printAll()
 
 void Keeper:: sort()
 {
-	printf("\n");
 	for (int i = 0; i < size-1;)
 	{
 		if (*list[i] > *list[i + 1])
@@ -145,13 +143,7 @@ void Keeper:: sort()
 			i = 0;
 		}
 		else i++;
-
-
 	}
-	if (size == 0)
-		printf("no found");
-	printf("\n");
-
 }
 
 void Keeper::printSearchSurname()

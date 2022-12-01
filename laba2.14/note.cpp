@@ -6,7 +6,15 @@ using namespace std;
 
 	note::note()
 	{
+		cout << "+note" << endl;
+		setName("unk");
+		setSurname("unk");
+		setPhone("unk");
+	}
 
+	note::~note()
+	{
+		cout << "-note" << endl;
 	}
 
 	bool note::operator>(note& obj)
@@ -179,7 +187,7 @@ using namespace std;
 			}
 
 		}
-
+		throw (char*)"edit menu exeption";
 	}
 
 	std::ostream& operator<<(std::ostream& out, note& ptr)

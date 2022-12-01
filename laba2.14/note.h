@@ -43,6 +43,7 @@ class note
 public:
 
 	note();
+	~note();
 
 	bool operator>(note& obj);
 

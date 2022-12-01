@@ -49,7 +49,6 @@ int main()
 				return 0;
 
 			case 1:
-		
 				conf.printAll();
 				break;
 
