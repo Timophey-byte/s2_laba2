@@ -73,9 +73,7 @@ int main()
 				}	
 				cout << endl;
 			}
-				//if (prev != '.' && prev != '!' && prev != '?')
 				
-
 			break;
 		}
 		prev = c;
