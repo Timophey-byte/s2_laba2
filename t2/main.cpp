@@ -25,6 +25,7 @@ int main()
 	}
 
 	char c;
+	char prev = 'a';
 
 	while (!fin.eof())
 	{
@@ -63,9 +64,21 @@ int main()
 			break;
 		default:
 			cout << c;
-			
+			if (c == '.' || c == '!' || c == '?')
+			{
+				while (c == '.' || c == '!' || c == '?')
+				{
+					fin.get(c);
+					cout << c;
+				}	
+				cout << endl;
+			}
+				//if (prev != '.' && prev != '!' && prev != '?')
+				
+
 			break;
 		}
+		prev = c;
 
 	}
 
